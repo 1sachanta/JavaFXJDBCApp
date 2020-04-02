@@ -2,7 +2,9 @@ package com.suhas.jdbc.sample;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-public class ContactDAO implements DAO {
+public class ContactDAO extends DAO {
+	
+
    private ContactPerson createContactPerson(ResultSet rs) {
       ContactPerson p = new ContactPerson();
       try {
@@ -21,6 +23,11 @@ public class ContactDAO implements DAO {
       }
       return p;
    }
+   
+	public  ContactDAO() {
+		super();
+	}
+	
    public List<ContactPerson> getContacts() {
       String sql = "Select * from contact order by name";
       List<ContactPerson> list = new ArrayList<>();
