@@ -28,7 +28,6 @@ public class DAO {
 	   public String urlString;
 	   public String DB_URL;
 	   
-	   
 
 	   public DAO()
 	   {

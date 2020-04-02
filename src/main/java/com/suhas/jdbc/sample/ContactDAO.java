@@ -3,7 +3,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 public class ContactDAO extends DAO {
-	
 
    private ContactPerson createContactPerson(ResultSet rs) {
       ContactPerson p = new ContactPerson();
