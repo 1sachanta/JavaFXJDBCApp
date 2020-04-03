@@ -35,18 +35,23 @@ public class DAO {
           setProperties();
 		  } catch (Exception ex)
 		  {
-			  System.out.print(ex.getMessage());
+			  System.out.println(ex.getMessage() ) ;
+			  ex.printStackTrace();
 		  }
 	   }
 	   
 	   private void setProperties() throws FileNotFoundException, IOException, InvalidPropertiesFormatException {
 		   this.prop = new Properties();
-		   String basePath = DAO.class.getResource("/").getPath();
-		 System.out.println(basePath);
+		
+		   //String basePath = DAO.class.getResource("/").getPath();
 		   
-		  FileInputStream fis = new FileInputStream(basePath+PROP_FILE);
+		 //System.out.println("basepath" + basePath);
+		   
+		 //FileInputStream fis = new FileInputStream(PROP_FILE);
 
-		  // InputStream fis = getClass().getClassLoader().getResourceAsStream(basePath+PROP_FILE);
+		   InputStream fis = getClass().getClassLoader().getResourceAsStream(PROP_FILE);
+		   //System.out.println("fis is" + fis.toString());
+		   
 		   prop.loadFromXML(fis);
 
 		   this.dbms = this.prop.getProperty("dbms");
@@ -58,6 +63,7 @@ public class DAO {
 		   this.serverName = this.prop.getProperty("server_name");
 		   this.portNumber = Integer.parseInt(this.prop.getProperty("port_number"));
 		   this.DB_URL=("jdbc:mysql://"+this.serverName +":"+this.portNumber +"/"+ this.dbName + "?zeroDateTimeBehavior=convertToNull");
+		  // System.out.println(DB_URL);
 
 }
 
