@@ -31,7 +31,7 @@ public class ContactDAO extends DAO {
       String sql = "Select * from contact order by name";
       List<ContactPerson> list = new ArrayList<>();
       try {
-         Class.forName(DRIVER);
+         Class.forName(driver);
          Connection con = DriverManager.getConnection (DB_URL, USER, PASS);
          Statement stmt = con.createStatement();
         
@@ -54,7 +54,7 @@ public class ContactDAO extends DAO {
          name + "%'";
       List<ContactPerson> list = new ArrayList<>();
       try {
-         Class.forName(DRIVER);
+         Class.forName(driver);
          Connection con = DriverManager.getConnection
             (DB_URL, USER, PASS);
          Statement stmt = con.createStatement();

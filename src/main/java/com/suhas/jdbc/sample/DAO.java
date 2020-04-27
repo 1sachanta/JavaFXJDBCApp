@@ -8,8 +8,8 @@ import java.io.*;
 public class DAO {
 	   //public static final String DB_URL =
 	//      "jdbc:mysql://testdb.c87oictu3b1l.us-east-1.rds.amazonaws.com:3306/" +"testdb?zeroDateTimeBehavior=convertToNull";
-	   public static final String DRIVER =
-	      "com.mysql.jdbc.Driver";
+	   //public static final String DRIVER =
+	   //   "com.mysql.jdbc.Driver";
 	//   public static final String USER = "admin";
 	//   public static final String PASS = "Password1";
 	   public   String USER ;
@@ -17,7 +17,7 @@ public class DAO {
 	   
 	   public static final String PROP_FILE="mysql-properties.xml";
 	   private Properties prop;
-	   private String driver;
+	   protected String driver;
 	   private String serverName;
 	   private int portNumber;
 	   public String dbms;
